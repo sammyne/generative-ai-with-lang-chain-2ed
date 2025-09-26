@@ -6,7 +6,7 @@ llm = Config().new_openai_like()
 
 messages = [
     SystemMessage(content="You're a helpful programming assistant"),
-    HumanMessage(content="Write a Python function to calculate factorial")
+    HumanMessage(content="Write a Python function to calculate factorial"),
 ]
 response = llm.invoke(messages)
 print(response.content)

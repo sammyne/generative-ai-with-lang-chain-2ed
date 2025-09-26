@@ -2,7 +2,8 @@ from langchain_core.prompts import ChatPromptTemplate
 from utils import Config
 
 # initialize OpenAI-like model with reasoning_effort parameter
-llm = Config().new_openai_like(reasoning_effort="high")
+# llm = Config().new_openai_like(reasoning_effort="high")
+llm = Config().new_openai_like()
 
 template = ChatPromptTemplate.from_messages(
     [
