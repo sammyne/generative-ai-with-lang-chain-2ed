@@ -6,6 +6,7 @@
 ## 进度
 
 - [x] 02. First Steps with LangChain
+- [x] 03. Building Workflows with LangGraph
 
 
 ## 参考文献
