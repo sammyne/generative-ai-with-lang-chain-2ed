@@ -24,10 +24,12 @@ class Config:
         if not model:
             raise ValueError("OPENAI_MODEL is not set")
 
+        vl_model = os.getenv("OPENAI_VL_MODEL")
+
         self.api_key = api_key
         self.base_url = base_url
         self.model = model
-
+        self.vl_model = vl_model
 
     def new_openai_like(self, **kwargs) -> ChatOpenAI:
         # 参考：https://bailian.console.aliyun.com/?tab=api#/api/?type=model&url=2587654
@@ -35,4 +37,15 @@ class Config:
         # ChatOpenAI 文档参考：https://python.langchain.com/api_reference/openai/chat_models/langchain_openai.chat_models.base.ChatOpenAI.html#langchain_openai.chat_models.base.ChatOpenAI
         return ChatOpenAI(
             api_key=self.api_key, base_url=self.base_url, model=self.model, **kwargs
+        )
+
+    def new_openai_like_vl(self, **kwargs) -> ChatOpenAI:
+        if not self.vl_model:
+            raise ValueError("OPENAI_VL_MODEL is not set")
+
+        # 参考：https://bailian.console.aliyun.com/?tab=api#/api/?type=model&url=2587654
+        # 参考：https://help.aliyun.com/zh/model-studio/models
+        # ChatOpenAI 文档参考：https://python.langchain.com/api_reference/openai/chat_models/langchain_openai.chat_models.base.ChatOpenAI.html#langchain_openai.chat_models.base.ChatOpenAI
+        return ChatOpenAI(
+            api_key=self.api_key, base_url=self.base_url, model=self.vl_model, **kwargs
         )

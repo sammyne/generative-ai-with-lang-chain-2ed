@@ -5,7 +5,8 @@
 
 ## 进度
 
-- [ ] 02. First Steps with LangChain
+- [x] 02. First Steps with LangChain
+
 
 ## 参考文献
 - 随书源码仓库 https://github.com/benman1/generative_ai_with_langchain/tree/second_edition
