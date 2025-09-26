@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "langchain>=0.3.27",
     "langchain-community>=0.3.29",
+    "langchain-ollama>=0.3.8",
     "langchain-openai>=0.3.33",
     "python-dotenv[cli]>=1.1.1",
     "utils",
@@ -14,3 +15,9 @@ dependencies = [
 
 [tool.uv.sources]
 utils = { path = "../utils", editable = true }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.30.1",
+    "uv>=0.8.22",
+]
