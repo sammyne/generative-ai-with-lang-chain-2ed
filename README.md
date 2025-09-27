@@ -8,6 +8,7 @@
 - [x] 02. First Steps with LangChain
 - [x] 03. Building Workflows with LangGraph
 - [x] 04. Building Intelligent RAG Systems
+- [ ] 05. Building Intelligent Agents
 
 ## 参考文献
 - 随书源码仓库 https://github.com/benman1/generative_ai_with_langchain/tree/second_edition
