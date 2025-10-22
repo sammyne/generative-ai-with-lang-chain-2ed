@@ -1,0 +1,15 @@
+[project]
+name = "model-context-protocol"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-core~=0.3",
+    "langchain-mcp-adapters~=0.1",
+    "langgraph~=0.6",
+    "utils",
+]
+
+[tool.uv.sources]
+utils = { path = "../../utils", editable = true }

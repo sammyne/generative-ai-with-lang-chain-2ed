@@ -2,6 +2,7 @@ import os
 
 import dotenv
 from langchain_openai import ChatOpenAI
+from langchain_anthropic import ChatAnthropic
 
 
 class Config:
@@ -30,6 +31,22 @@ class Config:
         self.base_url = base_url
         self.model = model
         self.vl_model = vl_model
+
+        self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+        self.anthropic_base_url = os.getenv("ANTHROPIC_BASE_URL")
+        self.anthropic_model = os.getenv("ANTHROPIC_MODEL")
+
+
+    def new_anthropic(self, **kwargs) -> ChatAnthropic:
+        # 参考：https://bailian.console.aliyun.com/?tab=api#/api/?type=model&url=2587654
+        # 参考：https://help.aliyun.com/zh/model-studio/models
+        # ChatOpenAI 文档参考：https://python.langchain.com/api_reference/openai/chat_models/langchain_openai.chat_models.base.ChatOpenAI.html#langchain_openai.chat_models.base.ChatOpenAI
+        return ChatAnthropic(
+            api_key=self.anthropic_api_key,
+            base_url=self.anthropic_base_url,
+            model=self.anthropic_model,
+            **kwargs
+        )
 
     def new_openai_like(self, **kwargs) -> ChatOpenAI:
         # 参考：https://bailian.console.aliyun.com/?tab=api#/api/?type=model&url=2587654

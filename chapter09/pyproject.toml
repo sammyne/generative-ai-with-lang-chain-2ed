@@ -1,0 +1,25 @@
+[project]
+name = "chapter09"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.0.1",
+    "uv>=0.9.5",
+]
+
+[tool.uv.workspace]
+members = [
+    "web-framework-deployment-with-fast-api",
+    "scalable-deployment-with-ray-serve",
+    "model-context-protocol",
+    "model-serving-infrastructure",
+    "tracking-responses",
+    "tiered-model-selection",
+    "output-token-optimization",
+    "monitoring-and-cost-analysis",
+]
