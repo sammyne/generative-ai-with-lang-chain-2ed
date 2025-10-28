@@ -1,7 +1,15 @@
 # Generative AI with LangChain 2ed
 
 ## 依赖
-- uv >= 0.8
+- VS Code >= 1.105.1
+- uv >= 0.9
+
+## 快速开始
+```bash
+uv sync
+```
+
+打开 jupyter notebook 文件后，参照 [Using uv with Jupyter / Using Jupyter from VS Code] 配置好 jupyter 使用的虚拟环境即可。
 
 ## 进度
 
@@ -14,7 +22,14 @@
 - [ ] 08. Evaluation and Testing
 - [ ] 09. Production-Ready LLM Deployment and Observability
 
+## 温馨提示
+- jupyter notebook 环境下，应使用 `uv pip install` 将依赖安装到 notebook 运行的虚拟环境下，并且保持 pyproject.toml 不改变。
+  使用 `uv add` 安装依赖会导致 pyproject.toml 被更新。
+
 ## 参考文献
 - 随书源码仓库 https://github.com/benman1/generative_ai_with_langchain/tree/second_edition
-- https://bailian.console.aliyun.com/?spm=5176.29619931.J_AHgvE-XDhTWrtotIBlDQQ.13.7e36521cIhSXnK&tab=doc#/doc
+- https://reference.langchain.com/python/
+- [阿里云百炼](https://bailian.console.aliyun.com)
+- [Using uv with Jupyter / Using Jupyter from VS Code]
 
+[Using uv with Jupyter / Using Jupyter from VS Code]: https://docs.astral.sh/uv/guides/integration/jupyter/#using-jupyter-within-a-project
