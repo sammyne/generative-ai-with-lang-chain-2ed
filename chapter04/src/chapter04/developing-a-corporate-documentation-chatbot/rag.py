@@ -39,7 +39,6 @@ system_prompt = (
     "{context}"
 )
 
-# Initialize the LangChain ChatGroq interface using the API key from environment variables.
 retriever = DocumentRetriever()
 prompt = ChatPromptTemplate.from_messages(
     [
@@ -136,3 +135,12 @@ graph_builder.add_edge("doc_finalizer", END)
 memory = MemorySaver()
 graph = graph_builder.compile(checkpointer=memory)
 config = {"configurable": {"thread_id": "abc123"}}
+
+if __name__ == "__main__":
+    from langchain_core.messages import HumanMessage
+
+    input_messages = [HumanMessage("What's the square root of 10?")]
+
+    response = graph.invoke({"messages": input_messages}, config=config)
+
+    print(response["messages"][-1].content)
