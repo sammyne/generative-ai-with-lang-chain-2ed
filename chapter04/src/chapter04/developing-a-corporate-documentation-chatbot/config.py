@@ -64,5 +64,5 @@ class Config:
             # 个人喜好，选了 Qwen/Qwen3-Embedding-8B
             # tiktoken_model_name='Qwen/Qwen3-Embedding-8B',
             tiktoken_model_name=self.hf_pretrained_embeddings_model,
-            **kwargs
+            **kwargs,
         )
