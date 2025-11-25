@@ -19,7 +19,7 @@ uv sync
 - [ ] 05. Building Intelligent Agents
 - [ ] 06. Advanced Applications and Multi-Agent Systems
 - [ ] 07. Software Development and Data Analysis Agents
-- [ ] 08. Evaluation and Testing
+- [x] 08. Evaluation and Testing
 - [ ] 09. Production-Ready LLM Deployment and Observability
 
 ## 温馨提示
