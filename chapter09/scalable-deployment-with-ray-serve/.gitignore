@@ -1,2 +1,4 @@
 embedding_checkpoints/
-scann_index/
+index/
+chroma/
+faiss_index/
