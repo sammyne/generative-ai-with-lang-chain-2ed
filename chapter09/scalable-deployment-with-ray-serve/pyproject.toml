@@ -7,12 +7,13 @@ requires-python = ">=3.12"
 dependencies = [
     "aiohttp-cors>=0.8.1",
     "beautifulsoup4>=4.14.2",
+    "faiss-cpu>=1.13.0",
     "langchain-community~=0.3",
     "langchain-core~=0.3",
     "langchain-huggingface~=0.3",
     "langchain-text-splitters~=0.3",
     "numpy>=2.3.4",
-    "ray[default]>=2.50.1",
-    "scann>=1.4.2",
+    "ray[default,serve]>=2.50.1",
+    "requests>=2.32.5",
     "sentence-transformers>=5.1.1",
 ]

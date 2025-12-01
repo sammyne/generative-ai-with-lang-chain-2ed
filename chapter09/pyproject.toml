@@ -16,10 +16,4 @@ dev = [
 members = [
     "web-framework-deployment-with-fast-api",
     "scalable-deployment-with-ray-serve",
-    "model-context-protocol",
-    "model-serving-infrastructure",
-    "tracking-responses",
-    "tiered-model-selection",
-    "output-token-optimization",
-    "monitoring-and-cost-analysis",
 ]
