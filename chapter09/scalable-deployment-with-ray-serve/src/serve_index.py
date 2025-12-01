@@ -1,11 +1,12 @@
 """Ray Server with pre-built FAISS index."""
 
-import ray
 import time
-from ray import serve
+
+import ray
 from fastapi import FastAPI
-from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_huggingface import HuggingFaceEmbeddings
+from ray import serve
 
 # Initialize Ray
 ray.init()
