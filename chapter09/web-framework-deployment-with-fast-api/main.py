@@ -8,8 +8,8 @@ import uvicorn
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
-from langchain.callbacks import AsyncIteratorCallbackHandler
-from langchain_core.messages import HumanMessage
+from langchain_classic.callbacks import AsyncIteratorCallbackHandler
+from langchain.messages import HumanMessage
 from utils import Config
 
 logging.basicConfig(level=logging.INFO)

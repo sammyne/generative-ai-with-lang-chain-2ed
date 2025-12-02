@@ -11,7 +11,7 @@ uv sync
 ### 构建索引
 
 ```bash
-../.venv/bin/python src/build_index.py
+uv run src/build_index.py
 ```
 
 ### 启动服务
