@@ -1,8 +1,9 @@
 """Loading LLMs and Embeddings."""
 
 from config import Config
-from langchain.embeddings import CacheBackedEmbeddings
-from langchain.storage import LocalFileStore
+import config
+from langchain_classic.embeddings import CacheBackedEmbeddings
+from langchain_classic.storage import LocalFileStore
 
 chat_model = Config().new_openai_like(
     temperature=0,
@@ -13,9 +14,10 @@ chat_model = Config().new_openai_like(
 
 store = LocalFileStore("./cache/")
 
-underlying_embeddings = Config().new_openai_like_embeddings()
+# underlying_embeddings = Config().new_openai_like_embeddings()
+underlying_embeddings = config.new_hf_embeddings()
 
 # Avoiding unnecessary costs by caching the embeddings.
 EMBEDDINGS = CacheBackedEmbeddings.from_bytes_store(
-    underlying_embeddings, store, namespace=underlying_embeddings.model
+    underlying_embeddings, store, namespace='hello-world'
 )

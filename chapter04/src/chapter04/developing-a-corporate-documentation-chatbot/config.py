@@ -2,7 +2,8 @@ import os
 
 import dotenv
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain.embeddings import Embeddings
 
 class Config:
     def __init__(self):
@@ -66,3 +67,13 @@ class Config:
             tiktoken_model_name=self.hf_pretrained_embeddings_model,
             **kwargs,
         )
+
+def new_hf_embeddings(**kwargs) -> Embeddings:
+    # ref: https://reference.langchain.com/python/integrations/langchain_huggingface/#langchain_huggingface.HuggingFaceEmbeddings
+    model_name = kwargs.pop("model_name", os.environ['HF_EMBEDDINGS_MODEL'])
+    out = HuggingFaceEmbeddings(
+        model_name=model_name,
+        model_kwargs={"device": "cpu"},
+        encode_kwargs={"normalize_embeddings": False},
+    )
+    return out
